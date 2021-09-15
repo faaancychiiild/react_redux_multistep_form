@@ -1,7 +1,8 @@
 import logo from '../assets/Group.png';
+import React from 'react';
 import { useSelector } from 'react-redux';
-const Header:React.FC = () => {
-  const page: any = useSelector((state: any) => state.page);
+const Header = () => {
+  const page = useSelector((state) => state.page);
   return (
     <section className='main_header'>
       <div className='logo-wrapper'>

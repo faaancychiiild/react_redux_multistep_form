@@ -89,3 +89,10 @@ body {
   right: -9.66%;
   left: 100%;
 }
+.target {
+  width: 575px;
+  position: relative;
+}
+.target-label {
+  display: block;
+}

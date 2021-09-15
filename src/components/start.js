@@ -3,7 +3,7 @@ import {next} from '../redux_logic/action_creators';
 import { useDispatch } from 'react-redux';
 const Start = () => {
   const dispatch = useDispatch();
-  const handle_start = (e: any) => {
+  const handle_start = (e) => {
     e.target.blur();
     dispatch(next());
   }
