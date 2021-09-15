@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 
 const initialState = {
   page: 0,
-  next_enabled: false
+  next_enabled: true
 
 }
 const switchPage = (state = initialState, action: object | any) => {
