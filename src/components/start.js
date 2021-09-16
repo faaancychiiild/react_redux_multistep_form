@@ -10,8 +10,8 @@ const Start = () => {
   return (
     <section className='start_section'>
       <div className='main_logo_div'>
-        <img alt='main_logo' src={Vector} className='main_logo'/>
-        <div onClick={handle_start}><span className='start_p'>კითხვარის <br></br> დაწყება</span></div>
+        <img className='main_logo' alt='main_logo' src={Vector}/>
+        <div onClick={handle_start}><span>კითხვარის <br></br> დაწყება</span></div>
       </div>
     </section>
   );

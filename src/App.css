@@ -11,25 +11,25 @@ body {
     align-items: center;
     flex-direction: column;
 }
-.main_logo {
-  position: absolute;
-  left: 40%;
-  top: 3%;
-  animation: start .5s forwards linear;
-  width: 20%;
-}
 .main_logo_div {
-  position: absolute;
-  width: 30%;
-  height: 20%;
-  left: 35%;
-  top: 30%;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  font-size: 1.5vw;
+  text-align: center;
+}
+.main_logo {
+  width: 5vw;
 }
 .start_section {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .logo-styles {
   width: 50%;
@@ -67,14 +67,25 @@ body {
 }
 .logo-styles {
   position: relative;
-  top: -10vh;
-}
-.nav {
-  position: relative;
-  width: 145px;
-  height: 20.63px;
-  top: 80vh;
+  top: -5vh;
+  height: 75vh;
 }
 .target-label {
   display: block;
+}
+.fa {
+  font-size: 50px;
+}
+.nav-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.nav-wrapper {
+  width: 8vw;
+  display: flex;
+  justify-content: space-between;
+}
+input {
+  background-color: transparent;
 }
