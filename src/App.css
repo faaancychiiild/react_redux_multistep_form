@@ -1,97 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
 body {
   margin: 0;
+  background-color: #EAEAEA;
+}
+.main_frame {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .main_logo {
   position: absolute;
-  left: calc(50% - 100px/2);
-  top: 81px;
+  left: 40%;
+  top: 3%;
+  animation: start .5s forwards linear;
+  width: 20%;
 }
 .main_logo_div {
   position: absolute;
-  width: 455px;
-  height: 278px;
-  left: calc(50% - 455px/2 - 0.5px);
-  top: 262px;
-  background-color: #EAEAEA;
+  width: 30%;
+  height: 20%;
+  left: 35%;
+  top: 30%;
+  align-items: center;
 }
 .start_section {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #EAEAEA;
+}
+.logo-styles {
+  width: 50%;
+  height: 70vh;
 }
 .start_p {
   position: absolute;
-  width: 498px;
-  height: 179px;
-  left: calc(50% - 498px/2);
-  font-family: 'Sylfaen';
-  font-style: normal;
   font-weight: bold;
-  font-size: 30px;
-  line-height: 36px;
+  font-size: 1.5em;
+  line-height: 1.5em;
   text-align: center;
   color: #232323;
-  top: 544px;
   cursor: pointer;
+  bottom: 0;
+  top: 100%;
+  text-align: center;
 }
-.main_header{
-  position: absolute;
-  width: 1524px;
-  height: 95px;
-  left: 200px;
-  top: 89px;
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80vw;
 }
 .logo-wrapper{
-  position: absolute;
-  left: 0%;
-  right: 90.3%;
-  top: 8.42%;
-  bottom: 66.32%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    padding-bottom: 1%;
+    border-bottom: 3px solid #232323;
+    margin-bottom: 4vh;
+    font-family: 'Anonymous Pro';
+    font-size: 40px;
 }
-.line {
-  position: absolute;
-  left: 0%;
-  right: 0.26%;
-  top: 57.89%;
-  bottom: 42.11%;
-  border: 1.8px solid #232323;
-}
-.progress{
-  position: absolute;
-  left: 91.6%;
-  right: 0;
-  font-family: 'Anonymous Pro';
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 40px;
-  text-align: right;
-  color: #232323;
+.logo-styles {
+  position: relative;
+  top: -10vh;
 }
 .nav {
-  position: absolute;
+  position: relative;
   width: 145px;
   height: 20.63px;
-  left: 887px;
-  top: 955px;
-}
-.nav-left{
-  right: 90.34%;
-}
-.nav-right, .nav-left{
-  position: absolute;
-  background-color: #fff;
-  border: none;
-  cursor: pointer;
-}
-.nav-right{
-  right: -9.66%;
-  left: 100%;
-}
-.target {
-  width: 575px;
-  position: relative;
+  top: 80vh;
 }
 .target-label {
   display: block;
