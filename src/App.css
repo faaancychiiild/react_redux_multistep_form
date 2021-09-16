@@ -72,6 +72,13 @@ body {
 }
 .target-label {
   display: block;
+  font-size: 120%;
+  font-weight: 700;
+}
+.target {
+  width: 25vw;
+  position: relative;
+  top: 3vh;
 }
 .fa {
   font-size: 50px;
@@ -88,4 +95,14 @@ body {
 }
 input {
   background-color: transparent;
+  margin: 1vh 0 3vh 0;
+  height: 4vh;
+  width: inherit;
+  border: 0.8px solid #232323;
+  font-size: 110%;
+  padding: .5% 4%;
+  font-weight: 400;
+}
+.required:after {
+  content: '*';
 }

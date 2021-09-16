@@ -2,9 +2,10 @@ import logo from '../assets/Group.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { next, prev } from '../redux_logic/action_creators';
 
-const Main_frame = (props) => {
+const MAIN_FRAME = (props) => {
   const dispatch = useDispatch();
   const page = useSelector((state) => state.page);
+  const next_enabled = useSelector((state) => state['next_enabled']);
   return (
     <section className='main_frame'>
       <div className='logo-wrapper'>
@@ -16,10 +17,10 @@ const Main_frame = (props) => {
       <img className='logo-styles' alt='logo_asset' src={props.img}/>
       </div>
       <nav className='nav-wrapper'>
-        {page !== 1 && <button className='nav-button' onClick={(e) => {e.preventDefault(); dispatch(prev())}}><i className="fa fa-angle-left"></i></button>}
-        {page !== 4 && <button className='nav-button' onClick={(e) => {e.preventDefault(); dispatch(next())}}><i className="fa fa-angle-right"></i></button>}
+        {page !== 1 && <button className='nav-button' onClick={(e) => {e.preventDefault(); dispatch(prev())}} disabled={!next_enabled}><i className="fa fa-angle-left"></i></button>}
+        {page !== 4 && <button className='nav-button' onClick={(e) => {e.preventDefault(); dispatch(next())}} disabled={!next_enabled}><i className="fa fa-angle-right"></i></button>}
       </nav>
     </section>
   )
 }
-export {Main_frame};
+export {MAIN_FRAME};

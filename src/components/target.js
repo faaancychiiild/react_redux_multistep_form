@@ -1,19 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { enable, disable } from '../redux_logic/action_creators';
+import { useDispatch } from 'react-redux';
+
+// COMPONENT FOR IDENTIFICATION
 export const Target = () => {
+  const dispatch = useDispatch();
+  const regex = /^[a-zA-Zა-ჰ]{3,255}$/;
+  const regex_email = /^[\w]+[\w-.]+@redberry.ge$/;
   const default_state = {
     სახელი: "",
     გვარი: "",
     მეილი: ""
   }
   const [state, setState] = useState(default_state);
+//We can listen to the state using effect hook as well as check for validation
+  useEffect(() => {
+    if(regex.test(state.სახელი) && regex.test(state.გვარი) && regex_email.test(state.მეილი)){
+      dispatch(enable());
+    }else{
+      dispatch(disable());
+    }
+  }, [state]);
+
+// We can combine all handlers into a single function as follows:
+  const handleChange = (e) => {
+    setState({...state, [e.target.id]: e.target.value});
+  }
   return (
     <div className='target'>
-      <label className="target-label" htmlFor="სახელი">სახელი</label>
-      <input id="სახელი" key="სახელი" type="text" required={true} value={state.სახელი}></input>
-      <label className="target-label" htmlFor="გვარი">გვარი</label>
-      <input id="გვარი" key="გვარი" type="text" required={true} value={state.გვარი}></input>
-      <label className="target-label" htmlFor="მეილი">მეილი</label>
-      <input id="მეილი" key="მეილი" type="text" value={state.მეილი} required></input>
+      <label className="target-label required" htmlFor="სახელი">სახელი</label>
+      <input id="სახელი" key="სახელი" type="text" value={state.სახელი || ""} onChange={handleChange}></input>
+      <label className="target-label required" htmlFor="გვარი">გვარი</label>
+      <input id="გვარი" key="გვარი" type="text" value={state.გვარი} onChange={handleChange}></input>
+      <label className="target-label required" htmlFor="მეილი">მეილი</label>
+      <input id="მეილი" key="მეილი" type="text" value={state.მეილი} onChange={handleChange}></input>
     </div>
   )
 }
