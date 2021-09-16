@@ -9,7 +9,7 @@ const MAIN_FRAME = (props) => {
   return (
     <section className='main_frame'>
       <div className='logo-wrapper'>
-        <img alt='redberry' src={logo}/>
+        <img className='redberry_label' alt='redberry' src={logo}/>
         <span>{page}/4</span>
       </div>
       <div className='content-wrapper'>

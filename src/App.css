@@ -4,7 +4,6 @@ body {
   background-color: #EAEAEA;
 }
 .main_frame {
-    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -12,14 +11,14 @@ body {
     flex-direction: column;
 }
 .main_logo_div {
-  height: 35vh;
+  height: 45vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   cursor: pointer;
   font-size: 1.5vw;
   text-align: center;
+  font-weight: 700;
 }
 .main_logo {
   width: 5vw;
@@ -30,6 +29,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.ready_go {
+  position: relative;
+  top: 10vh;
+
 }
 .logo-styles {
   width: 50%;
@@ -52,6 +56,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   width: 80vw;
+  height: 65vh;
 }
 .logo-wrapper{
     display: flex;
@@ -60,10 +65,14 @@ body {
     align-items: center;
     width: 80vw;
     padding-bottom: 1%;
-    border-bottom: 3px solid #232323;
-    margin-bottom: 4vh;
+    border-bottom: 1.8px solid #232323;
+    margin-bottom: 3vh;
     font-family: 'Anonymous Pro';
-    font-size: 40px;
+    font-size: 2vw;
+    font-weight: 700;
+}
+.redberry_label {
+  height: 3vh;
 }
 .logo-styles {
   position: relative;
@@ -72,11 +81,11 @@ body {
 }
 .target-label {
   display: block;
-  font-size: 120%;
+  font-size: 90%;
   font-weight: 700;
 }
 .target {
-  width: 25vw;
+  width: 22vw;
   position: relative;
   top: 3vh;
 }
@@ -93,15 +102,16 @@ body {
   display: flex;
   justify-content: space-between;
 }
-input {
+.text-input {
   background-color: transparent;
   margin: 1vh 0 3vh 0;
   height: 4vh;
   width: inherit;
-  border: 0.8px solid #232323;
-  font-size: 110%;
+  border: .8px solid #232323;;
+  font-size: 80%;
   padding: .5% 4%;
   font-weight: 400;
+  color: #232323;
 }
 .required:after {
   content: '*';

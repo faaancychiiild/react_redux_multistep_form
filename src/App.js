@@ -5,14 +5,24 @@ import asset_1 from './assets/scan.png';
 import asset_2 from './assets/vaccinate.png';
 import { useSelector } from 'react-redux';
 import { Target } from './components/target';
+import { Covid } from './components/covid';
+import { useState } from 'react';
+
 const App = () => {
+  const default_state = {
+    სახელი: "nino",
+    გვარი: "nino",
+    მეილი: "ni@redberry.ge"
+  }
+  const [state, setState] = useState(default_state);
   const page = useSelector((state) => state.page);
   const assets = ['', asset_1, asset_2];
   return (
-    <>
-    {page===0 && <Start/>}
-    {page > 0 && page < 6 && <MAIN_FRAME component={<Target />} img={assets[page]}/>}
-    </>
+    <form className='form'>
+    {page === 0 && <Start/>}
+    {page === 1 && <MAIN_FRAME component={<Target state={state} setState={setState}/>} img={assets[page]}/>}
+    {page === 2 && <MAIN_FRAME component={<Covid />} img={assets[page]}/>}
+    </form>
   )
 }
 export default App;
