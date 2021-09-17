@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { enable, disable } from '../redux_logic/action_creators';
 import { useDispatch } from 'react-redux';
 
