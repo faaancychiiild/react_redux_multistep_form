@@ -14,8 +14,13 @@ const App = () => {
     გვარი: "nino",
     მეილი: "ni@redberry.ge"
   }
+  const covid_default = {
+    checked: '',
+    checked_i: '' 
+  }
   const [state, setState] = useState(default_state);
-  const [covidState,  setCovidState] = useState({checked: "yes"});
+  const [covidState,  setCovidState] = useState(covid_default);
+
   const page = useSelector((state) => state.page);
   const assets = ['', asset_1, asset_2];
   return (
