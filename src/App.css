@@ -113,6 +113,16 @@ body {
   font-weight: 400;
   color: #232323;
 }
+.radios{
+  font-size: 80%;
+  display: block;
+}
+.radio-input {
+  margin: 1.5vh;
+}
 .required:after {
   content: '*';
+}
+.question {
+  font-weight: 700;
 }

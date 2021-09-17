@@ -15,13 +15,14 @@ const App = () => {
     მეილი: "ni@redberry.ge"
   }
   const [state, setState] = useState(default_state);
+  const [covidState,  setCovidState] = useState({checked: "yes"});
   const page = useSelector((state) => state.page);
   const assets = ['', asset_1, asset_2];
   return (
     <form className='form'>
     {page === 0 && <Start/>}
     {page === 1 && <MAIN_FRAME component={<Target state={state} setState={setState}/>} img={assets[page]}/>}
-    {page === 2 && <MAIN_FRAME component={<Covid />} img={assets[page]}/>}
+    {page === 2 && <MAIN_FRAME component={<Covid covidState={covidState} setCovidState={setCovidState}/>} img={assets[page]}/>}
     </form>
   )
 }

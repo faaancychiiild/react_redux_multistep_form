@@ -1,15 +1,26 @@
-import { useState } from 'react';
+export const Covid = ({covidState,  setCovidState}) => {
+const arr1 = ["კი", "არა", "ეხლა მაქვს"];
 
-export const Covid = () => {
-  const [covidState,  setCovidState] = useState({checked: "yes"});
+const AUTO_PRO = (inputs, name, input_class, label_class, p_text) => {
   return (
     <>
-      <input name="გადატანილი" type="radio" id="yes" checked={covidState.checked === "yes"}/>
-      <label htmlFor="yes">კი</label>
-      <input name="გადატანილი" type="radio" id="no" checked={covidState.checked === "no"}/>
-      <label htmlFor="no">არა</label>
-      <input name="გადატანილი" type="radio" id="now" checked={covidState.checked === "now"}/>
-      <label htmlFor="now">ეხლა მაქვს</label>
+    <p className='question'>{p_text}</p>
+    {inputs.map((i) => {
+      return (
+        <>
+        <input className={input_class} name={name} type="radio" id={i} onChange={(e) => setCovidState({...covidState, checked: e.target.id})} checked={covidState.checked === i}/>
+        <label className={label_class} htmlFor={i}>{i}</label><br></br>
+        </>
+      )
+    })}
     </>
+  )
+}
+  return (
+    <section>
+      <div className="radios">
+        { AUTO_PRO(arr1, "გადატანილი", 'radio-input', 'radio-label', 'გაქვს გადატანილი Covid-19?*') }
+      </div>
+    </section>
   )
 }
