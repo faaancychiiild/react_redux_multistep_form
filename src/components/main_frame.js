@@ -1,6 +1,6 @@
 import logo from '../assets/Group.png';
 import { useSelector, useDispatch } from 'react-redux';
-import { next, prev } from '../redux_logic/action_creators';
+import { next, prev, disable } from '../redux_logic/action_creators';
 
 const MAIN_FRAME = (props) => {
   const dispatch = useDispatch();
@@ -17,8 +17,8 @@ const MAIN_FRAME = (props) => {
       <img className='logo-styles' alt='logo_asset' src={props.img}/>
       </div>
       <nav className='nav-wrapper'>
-        {page !== 1 && <button className='nav-button' onClick={(e) => {e.preventDefault(); dispatch(prev())}} disabled={!next_enabled}><i className="fa fa-angle-left"></i></button>}
-        {page !== 4 && <button className='nav-button' onClick={(e) => {e.preventDefault(); dispatch(next())}} disabled={!next_enabled}><i className="fa fa-angle-right"></i></button>}
+        {page !== 1 && <button className='nav-button' onClick={(e) => {e.preventDefault(); dispatch(prev())}}><i className="fa fa-angle-left"></i></button>}
+        {page !== 4 && <button className='nav-button' onClick={(e) => {e.preventDefault(); dispatch(disable()); dispatch(next())}} disabled={!next_enabled}><i className="fa fa-angle-right"></i></button>}
       </nav>
     </section>
   )

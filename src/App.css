@@ -56,7 +56,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   width: 80vw;
-  height: 65vh;
+  height: 70vh;
 }
 .logo-wrapper{
     display: flex;
@@ -72,7 +72,7 @@ body {
     font-weight: 700;
 }
 .redberry_label {
-  height: 3vh;
+  height: 2.5vh;
 }
 .logo-styles {
   position: relative;
@@ -90,7 +90,7 @@ body {
   top: 3vh;
 }
 .fa {
-  font-size: 50px;
+  font-size: 200%;
 }
 .nav-button {
   background-color: transparent;
@@ -102,23 +102,25 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.text-input {
+.text-input, .custom-input {
   background-color: transparent;
-  margin: 1vh 0 3vh 0;
   height: 4vh;
-  width: inherit;
-  border: .8px solid #232323;;
-  font-size: 80%;
+  width: 22vw;
+  border: .1rem solid #232323;
   padding: .5% 4%;
   font-weight: 400;
   color: #232323;
 }
+.text-input {
+  margin: 1vh 0 2.5vh 0;
+}
 .radios{
   font-size: 80%;
   display: block;
+  width: 30vw;
 }
-.radio-input {
-  margin: 1.3vh 2vh;
+input {
+  margin: 1vh 2vh;
 }
 .required:after {
   content: '*';

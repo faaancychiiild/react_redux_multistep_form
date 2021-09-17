@@ -16,7 +16,10 @@ const App = () => {
   }
   const covid_default = {
     checked: '',
-    checked_i: '' 
+    checked_i: '',
+    test_date: '',
+    test_result: '',
+    covid_date: ''
   }
   const [state, setState] = useState(default_state);
   const [covidState,  setCovidState] = useState(covid_default);
