@@ -77,7 +77,8 @@ body {
 .logo-styles {
   position: relative;
   top: -5vh;
-  height: 75vh;
+  height: 70vh;
+  margin: 2vh 0;
 }
 .target-label {
   display: block;
