@@ -5,16 +5,16 @@ import { enable, disable } from '../redux_logic/action_creators';
 //Function for generating radio inputs easier. We can use this function within
 //other modules too
 
-export const AUTO_PRO = (data, name, p_text, state, k, stateObj, setStateObj) => {
+export const AUTO_PRO = (data, name, p_text, state, stateObj, setStateObj) => {
    return (
    <>
    <p className='question'>{p_text}</p>
    {data.map((i) => {
      return (
-      <label key={i + k}>
-      <input className='radio-input' name={name} type="radio" id={i+k} onChange={
+      <label key={i}>
+      <input className='radio-input' name={name} type="radio" id={i} onChange={
          (e) => setStateObj({...stateObj, [state]: e.target.id})
-      } checked={stateObj[state] === i+k}/>
+      } checked={stateObj[state] === i}/>
       {i}
       <br></br>
       </label>
@@ -29,7 +29,7 @@ export const Covid = ({covidState,  setCovidState}) => {
    const arr2 = ["კი", "არა"];
    useEffect(() => {
       let [a,b,c,d,e] = Object.values(covidState);
-      if(a==="არა" || a==="ახლა მაქვს" || (a==="კი" && b==="კი_i" && c && d) || (a==="კი" && b==="არა_i" && e)){
+      if(a==="არა" || a==="ახლა მაქვს" || (a==="კი" && b==="კი" && c && d) || (a==="კი" && b==="არა" && e)){
          dispatch(enable());
       }else{
          dispatch(disable());
@@ -48,11 +48,10 @@ export const Covid = ({covidState,  setCovidState}) => {
    }
 
    return (
-   <section>
      <div className="radios">
-      { AUTO_PRO(arr1, "გადატანილი", 'გაქვს გადატანილი Covid-19?*', 'checked', '', covidState, setCovidState) }
-      {covidState.checked === 'კი' && AUTO_PRO(arr2, "ანტისხეულების ტესტი", 'ანტისხეულების ტესტი გაკეთებული გაქვს?*', 'checked_i', '_i', covidState, setCovidState)}
-       {covidState.checked === 'კი' && covidState.checked_i === 'კი_i' && (
+      { AUTO_PRO(arr1, "გადატანილი", 'გაქვს გადატანილი Covid-19?*', 'გადატანილი', covidState, setCovidState) }
+      {covidState.გადატანილი === 'კი' && AUTO_PRO(arr2, "ანტისხეულების ტესტი", 'ანტისხეულების ტესტი გაკეთებული გაქვს?*', 'ანტისხეულების_ტესტი', covidState, setCovidState)}
+       {covidState.გადატანილი === 'კი' && covidState.ანტისხეულების_ტესტი === 'კი' && (
            <>
                <p className='question'>თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა*</p>
                <input value={covidState.test_date} className='custom-input' id='test_date' type='date' onChange={handleChange}></input><br></br>
@@ -61,7 +60,7 @@ export const Covid = ({covidState,  setCovidState}) => {
        )
       }
       {
-         covidState.checked === 'კი' && covidState.checked_i === 'არა_i' && (
+         covidState.გადატანილი === 'კი' && covidState.ანტისხეულების_ტესტი === 'არა' && (
            <>
                <p className='question'>მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*</p>
                <input value={covidState.covid_date} className='custom-input' id='covid_date' type='date' onChange={handleChange}></input><br></br>
@@ -69,6 +68,5 @@ export const Covid = ({covidState,  setCovidState}) => {
        )
       }
      </div>
-   </section>
    )
 }

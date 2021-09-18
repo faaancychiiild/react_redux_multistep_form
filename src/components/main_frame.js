@@ -18,7 +18,7 @@ const MAIN_FRAME = (props) => {
       </div>
       <nav className='nav-wrapper'>
         {page !== 1 && <button className='nav-button' onClick={(e) => {e.preventDefault(); dispatch(prev())}}><i className="fa fa-angle-left"></i></button>}
-        {page !== 4 && <button className='nav-button' onClick={(e) => {e.preventDefault(); dispatch(disable()); dispatch(next())}} disabled={!next_enabled}><i className="fa fa-angle-right"></i></button>}
+        {page !== 4 && <button type='submit' className='nav-button' onClick={(e) => {e.preventDefault(); dispatch(disable()); dispatch(next())}} disabled={!next_enabled}><i className="fa fa-angle-right"></i></button>}
       </nav>
     </section>
   )

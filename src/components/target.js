@@ -22,15 +22,19 @@ export const Target = ({state, setState}) => {
 
 // We can combine all handlers into a single function as follows:
   const handleChange = (e) => {
-    setState({...state, [e.target.id]: e.target.value});
-    if(e.target.id !== 'მეილი' && !regex.test(e.target.value)){
-// HERE: remember '' < 3 returns true; The right order makes everything work fine:
-      let val = e.target.value;
-      let id = e.target.id;
+    let val = e.target.value;
+    let id = e.target.id;
+    setState({...state, [id]: val});
+    if(id !== 'მეილი' && !regex.test(val)){
+// HERE: as '' < 3 returns true the right order works out everything:
       val.length < 3 && setError({...error, [id]: `${id}ს ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოგან`});
       val === '' && setError({...error, [id]: `${id}ს ველის შევსება სავალდებულოა`});
       val.length > 255 && setError({...error, [id]: `${id}ს ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოგან`});
       val.length > 2 && setError({...error, [id]: `${id}ს ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს`});
+    }else if(id === 'მეილი' && !regex_email.test(val)){
+      setError({...error, [id]: 'გთხოვთ დარეგისტრირდეთ Redberry-ს მეილით (youremail@redberry.ge)'});
+    }else{
+      setError({...error, [id]: ''});
     }
   }
   return (
@@ -44,6 +48,10 @@ export const Target = ({state, setState}) => {
       <label className="target-label required" htmlFor="მეილი">მეილი</label>
       <input className='text-input' id="მეილი" key="მეილი" type="text" value={state.მეილი} onChange={handleChange}></input>
       <span className='error-span'>{error.მეილი}</span>
+      <div className='marginal_note'>
+        <hr></hr>
+        <span>*-ით მონიშნული ველების შევსება სავალდებულოა</span>
+      </div>
     </div>
   )
 }

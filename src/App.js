@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { Target } from './components/target';
 import { Covid } from './components/covid';
 import { Vacc } from './components/vacc';
+import { Comments } from './components/comments';
 import { useState } from 'react';
 
 const App = () => {
@@ -17,16 +18,16 @@ const App = () => {
     მეილი: "mail@redberry.ge"
    }
    const covid_default = {
-    checked: '',
-    checked_i: '',
+    გადატანილი: '',
+    ანტისხეულების_ტესტი: '',
     test_date: '',
     test_result: '',
     covid_date: ''
    }
   const vacc_default = {
-    checked: '',
-    checked_i: '',
-    checked_ii: ''
+    აცრილი: '',
+    ეტაპი: '',
+    რას_ელოდები: ''
    }
   const [state, setState] = useState(default_state);
   const [covidState,  setCovidState] = useState(covid_default);
@@ -35,7 +36,7 @@ const App = () => {
   const page = useSelector((state) => state.page);
   const assets = ['', asset_1, asset_2, asset_3];
   return (
-    <form className='form'>
+    <form className='form' onSubmit={(e) => {e.preventDefault(); console.log(e.target.elements)}}>
     {page === 0 && <Start/>}
     {page === 1 && <MAIN_FRAME component={<Target state={state} setState={setState}/>} img={assets[page]}/>}
     {page === 2 && <MAIN_FRAME component={<Covid covidState={covidState} setCovidState={setCovidState}/>} img={assets[page]}/>}
