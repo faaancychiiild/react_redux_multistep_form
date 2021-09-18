@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { enable, disable } from '../redux_logic/action_creators';
 import { useDispatch } from 'react-redux';
 
 // COMPONENT FOR IDENTIFICATION
 export const Target = ({state, setState}) => {
   const dispatch = useDispatch();
-  const regex = /^[a-zA-Zა-ჰ]{3,255}$/;
-  const regex_email = /^[\w]+[\w-.]+@redberry.ge$/;
+  const regex = useMemo(() => /^[a-zA-Zა-ჰ]{3,255}$/, []);
+  const regex_email = useMemo(() => /^[\w]+[\w-.]+@redberry.ge$/, []);
 //We can listen to the state using effect hook as well as check for validation
   useEffect(() => {
     if(regex.test(state.სახელი) && regex.test(state.გვარი) && regex_email.test(state.მეილი)){
@@ -14,7 +14,7 @@ export const Target = ({state, setState}) => {
     }else{
       dispatch(disable());
     }
-  }, [state]);
+  }, [state, dispatch, regex_email, regex]);
 
 //INPUT VALIDATION SPECIFICS
    let defaultError = {სახელი: '', გვარი: '', მეილი: ''}
