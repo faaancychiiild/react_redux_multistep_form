@@ -11,7 +11,7 @@ const Start = () => {
     <section className='start_section'>
       <div className='main_logo_div'>
         <img className='main_logo' alt='main_logo' src={Vector}/>
-        <div className='ready_go' onClick={handle_start}><span>კითხვარის <br></br> დაწყება</span></div>
+        <div className='ready_go' onClick={handle_start}><span className='start_slider'>კითხვარის <br></br> დაწყება</span></div>
       </div>
     </section>
   );

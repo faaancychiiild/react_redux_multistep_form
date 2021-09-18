@@ -15,17 +15,29 @@ a{
     flex-direction: column;
 }
 .main_logo_div {
-  height: 45vh;
+  top: -10vh;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
   font-size: 1.5vw;
   text-align: center;
+  justify-content: space-around;
   font-weight: 700;
+  position: relative;
 }
 .main_logo {
-  width: 5vw;
+  width: 200vw;
+  animation: logo 1s forwards linear;
+}
+@keyframes logo {
+    0%{
+        width: 200vw;
+    }
+    100%{
+        width: 5vw;
+    }
 }
 .start_section {
   width: 100vw;
@@ -34,10 +46,23 @@ a{
   justify-content: center;
   align-items: center;
 }
+.start_slider {
+    animation: slide 0.5s forwards linear;
+    animation-delay: 1.3s;
+    position: relative;
+    bottom: 10vh;
+}
+@keyframes slide {
+    from{
+      bottom: 10vh;
+    }
+    to{
+      bottom: 0;
+    }
+}
 .ready_go {
-  position: relative;
-  top: 10vh;
-
+  height: 10vh;
+  overflow: hidden;
 }
 .logo-styles {
   width: 50%;
@@ -101,9 +126,9 @@ a{
   cursor: pointer;
 }
 .nav-wrapper {
-  width: 8vw;
+  width: 12vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .text-input, .custom-input {
   background-color: transparent;
@@ -119,7 +144,7 @@ a{
 .error-span {
    display: block;
    margin: .5vh 0 4vh 2vh;
-   font-size: 70%;
+   font-size: 80%;
    color: #F15524;
    width: 30vw;
 }
@@ -162,6 +187,7 @@ textarea {
   resize: none;
 	display: block;
   box-sizing: border-box;
+  font-family: inherit;
 }
 .submit {
   float: right;
@@ -172,4 +198,5 @@ textarea {
   border: none;
   border-radius: 20px;
   font-weight: 700;
+  cursor: pointer;
 }

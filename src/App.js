@@ -43,13 +43,16 @@ const App = () => {
 
   const page = useSelector((state) => state.page);
   const assets = ['', asset_1, asset_2, asset_3, asset_4];
+  const submit_function = () => {
+    console.log({...state, ...covidState, ...vaccState, ...comments});
+  }
   return (
     <form className='form' onSubmit={(e) => {e.preventDefault(); console.log(e.target.elements)}}>
     {page === 0 && <Start/>}
     {page === 1 && <MAIN_FRAME component={<Target state={state} setState={setState}/>} img={assets[page]}/>}
     {page === 2 && <MAIN_FRAME component={<Covid covidState={covidState} setCovidState={setCovidState}/>} img={assets[page]}/>}
     {page === 3 && <MAIN_FRAME component={<Vacc vaccState={vaccState} setVaccState={setVaccState}/>} img={assets[page]}/>}
-    {page === 4 && <MAIN_FRAME component={<Comments comments={comments} setComments={setComments}/>} img={assets[page]}/>}
+    {page === 4 && <MAIN_FRAME component={<Comments comments={comments} setComments={setComments} submit_function={submit_function} />} img={assets[page]}/>}
     </form>
   )
 }
