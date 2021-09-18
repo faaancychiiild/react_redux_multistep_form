@@ -126,8 +126,12 @@ a{
 .radios{
   font-size: 80%;
   display: block;
-  width: 30vw;
+  width: 27vw;
   margin: 2vh 0;
+  overflow: auto;
+}
+.radios::-webkit-scrollbar {
+	display: none;
 }
 input{
   margin: 0 2vh;
@@ -140,6 +144,7 @@ input{
 }
 .question {
   font-weight: 700;
+  margin-top: 4vh;
 }
 .book {
    margin: 4vh 6vh;
@@ -149,4 +154,22 @@ input{
   width: 15vw;
   color: #626262;
   margin-top: 5vh;
+}
+textarea {
+	height: 130px;
+	width: 100%;
+	flex-shrink: 0;
+  resize: none;
+	display: block;
+  box-sizing: border-box;
+}
+.submit {
+  float: right;
+  margin: 3vh 0;
+  padding: 2vh 3vh;
+  color: #fff;
+  background-color: #208298;
+  border: none;
+  border-radius: 20px;
+  font-weight: 700;
 }
