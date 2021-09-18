@@ -12,9 +12,9 @@ import { useState } from 'react';
 
 const App = () => {
   const default_state = {
-    სახელი: "nino",
-    გვარი: "nino",
-    მეილი: "ni@redberry.ge"
+    სახელი: "",
+    გვარი: "",
+    მეილი: ""
    }
    const covid_default = {
     checked: '',

@@ -84,6 +84,7 @@ body {
   display: block;
   font-size: 90%;
   font-weight: 700;
+  margin: 1.5vh 0;
 }
 .target {
   width: 22vw;
@@ -105,15 +106,21 @@ body {
 }
 .text-input, .custom-input {
   background-color: transparent;
-  height: 4vh;
-  width: 22vw;
-  border: .1rem solid #232323;
+  height: 5vh;
+  width: 30vw;
+  border: 0.8px solid #232323;
   padding: .5% 4%;
+  font-size: 100%;
   font-weight: 400;
-  color: #232323;
+  color: #232323 !important;
+
 }
-.text-input {
-  margin: 1vh 0 2.5vh 0;
+.error-span {
+   display: block;
+   margin: .5vh 0 4vh 2vh;
+   font-size: 80%;
+   color: #F15524;
+   width: 30vw;
 }
 .radios{
   font-size: 80%;
@@ -121,7 +128,10 @@ body {
   width: 30vw;
 }
 input{
-  margin: 1vh 2vh;
+  margin: 0 2vh;
+}
+.text-input {
+   margin: 0;
 }
 .required:after {
   content: '*';
