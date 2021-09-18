@@ -3,6 +3,10 @@ body {
   margin: 0;
   background-color: #EAEAEA;
 }
+a{
+  text-decoration: none;
+  color: #1289AE;
+}
 .main_frame {
     height: 100vh;
     display: flex;
