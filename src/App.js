@@ -24,7 +24,9 @@ const App = () => {
     covid_date: ''
    }
   const vacc_default = {
-    checked: ''
+    checked: '',
+    checked_i: '',
+    checked_ii: ''
    }
   const [state, setState] = useState(default_state);
   const [covidState,  setCovidState] = useState(covid_default);

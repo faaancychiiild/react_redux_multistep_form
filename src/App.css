@@ -120,7 +120,7 @@ body {
   display: block;
   width: 30vw;
 }
-input {
+input{
   margin: 1vh 2vh;
 }
 .required:after {
@@ -128,4 +128,7 @@ input {
 }
 .question {
   font-weight: 700;
+}
+.book {
+   margin: 4vh 6vh;
 }
