@@ -48,6 +48,7 @@ export const Covid = ({covidState,  setCovidState}) => {
    }
 
    return (
+     <>
      <div className="radios">
       { AUTO_PRO(arr1, "გადატანილი", 'გაქვს გადატანილი Covid-19?*', 'გადატანილი', covidState, setCovidState) }
       {covidState.გადატანილი === 'კი' && AUTO_PRO(arr2, "ანტისხეულების ტესტი", 'ანტისხეულების ტესტი გაკეთებული გაქვს?*', 'ანტისხეულების_ტესტი', covidState, setCovidState)}
@@ -68,5 +69,7 @@ export const Covid = ({covidState,  setCovidState}) => {
        )
       }
      </div>
+     <div className='fever'></div>
+     </>
    )
 }

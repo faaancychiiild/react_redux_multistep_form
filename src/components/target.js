@@ -40,18 +40,19 @@ export const Target = ({state, setState}) => {
   return (
     <div className='target'>
       <label className="target-label required" htmlFor="სახელი">სახელი</label>
-      <input className='text-input' id="სახელი" key="სახელი" type="text" value={state.სახელი || ""} onChange={handleChange}></input>
+      <input placeholder='სახელი' className='text-input' id="სახელი" key="სახელი" type="text" value={state.სახელი || ""} onChange={handleChange}></input>
       <span className='error-span'>{error.სახელი}</span>
       <label className="target-label required" htmlFor="გვარი">გვარი</label>
-      <input className='text-input' id="გვარი" key="გვარი" type="text" value={state.გვარი} onChange={handleChange}></input>
+      <input placeholder='გვარი' className='text-input' id="გვარი" key="გვარი" type="text" value={state.გვარი} onChange={handleChange}></input>
       <span className='error-span'>{error.გვარი}</span>
       <label className="target-label required" htmlFor="მეილი">მეილი</label>
-      <input className='text-input' id="მეილი" key="მეილი" type="text" value={state.მეილი} onChange={handleChange}></input>
+      <input placeholder='mail@redberry.ge' className='text-input' id="მეილი" key="მეილი" type="text" value={state.მეილი} onChange={handleChange}></input>
       <span className='error-span'>{error.მეილი}</span>
       <div className='marginal_note'>
         <hr></hr>
         <span>*-ით მონიშნული ველების შევსება სავალდებულოა</span>
       </div>
+      <div className='scan'></div>
     </div>
   )
 }

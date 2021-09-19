@@ -28,12 +28,13 @@ a{
   position: relative;
 }
 .main_logo {
-  width: 200vw;
+  width: 170vw;
   animation: logo 1s forwards linear;
+  animation-delay: .5s;
 }
 @keyframes logo {
     0%{
-        width: 200vw;
+        width: 170vw;
     }
     100%{
         width: 5vw;
@@ -48,9 +49,15 @@ a{
 }
 .start_slider {
     animation: slide 0.5s forwards linear;
-    animation-delay: 1.3s;
+    animation-delay: 1.8s;
     position: relative;
     bottom: 10vh;
+    font-weight: 500;
+    font-family: monospace;
+    font-size: 120%;
+}
+.start_slider:hover {
+  text-shadow: 3px 0px #232323;
 }
 @keyframes slide {
     from{
@@ -199,4 +206,51 @@ textarea {
   border-radius: 20px;
   font-weight: 700;
   cursor: pointer;
+}
+.scan {
+  background-color: #D6D16E;
+  width: 7vw;
+  height: 3vh;
+  position: absolute;
+  left: 35vw;
+  top: 30vh;
+  animation: scan .3s linear forwards;
+}
+.fever {
+  background-color: #DD3939;
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+  left: 70vw;
+  top: 30vh;
+  border-radius: 50%;
+  animation: fever .3s linear forwards;
+}
+@keyframes scan {
+  0% {
+    left: 35vw;
+    top: 30vh;
+    width: 7vw;
+    height: 3vh;
+  }
+  100% {
+    left: 46vw;
+    top: 16vh;
+    width: 27vw;
+    height: 7vh;
+  }
+}
+@keyframes fever {
+  0% {
+    left: 70vw;
+    top: 30vh;
+    width: 5vw;
+    height: 5vw;
+  }
+  100%{
+    left: 53vw;
+    top: 35vh;
+    width: 10vw;
+    height: 10vw;
+  }
 }
