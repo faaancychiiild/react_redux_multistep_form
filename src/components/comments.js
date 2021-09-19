@@ -1,10 +1,16 @@
 import {AUTO_PRO} from './covid';
 import { useState } from 'react';
+import heart from '../assets/heart.png';
+import { useDispatch } from 'react-redux';
+import { next } from '../redux_logic/action_creators';
+
 export const Comments = ({comments, setComments, submit_function}) => {
   let arr1 = ['კვირაში ორჯერ', 'კვირაში ერთხელ', 'ორ კვირაში ერთხელ', 'თვეში ერთხელ'];
   let arr2 = ['0', '1', '2', '3', '4', '5'];
   let [error1, setError1] = useState('');
   let [error2, setError2] = useState('');
+
+  const dispatch = useDispatch();
   const handler_func = () => {
     if(comments.ონლაინ_შეხვედრები === ''){
       setError1('ამ ველის შევსება სავალდებულოა')
@@ -12,9 +18,11 @@ export const Comments = ({comments, setComments, submit_function}) => {
       setError2('ამ ველის შევსება სავალდებულოა')
     }else {
       submit_function();
+      dispatch(next());
     }
   }
   return (
+    <>
     <div className='radios'>
       <p className='intro'>
        რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი
@@ -37,5 +45,7 @@ export const Comments = ({comments, setComments, submit_function}) => {
       <textarea value={comments.გარემო} onChange={(e) => setComments({...comments, გარემო: e.target.value})}></textarea>
       <button className='submit' type='button' onClick={() => handler_func()}>დასრულება</button>
     </div>
+    <img className='heart' src={heart} alt='heart shape'></img>
+    </>
   )
 }

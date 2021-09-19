@@ -7,12 +7,33 @@ a{
   text-decoration: none;
   color: #1289AE;
 }
+.finish {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  position: relative;
+  color: #fff;
+}
+.thanks-msg {
+  font-family: cursive;
+  letter-spacing: 10px;
+  font-size: 35px;
+}
+.sparkle-1{
+  width: 30px;
+}
+.sparkle-2{
+  width: 20px;
+  transform: translate(900%, -100%);
+}
 .main_frame {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .main_logo_div {
   top: -10vh;
@@ -33,12 +54,12 @@ a{
   animation-delay: .5s;
 }
 @keyframes logo {
-    0%{
-        width: 170vw;
-    }
-    100%{
-        width: 5vw;
-    }
+  0%{
+      width: 170vw;
+  }
+  100%{
+      width: 5vw;
+  }
 }
 .start_section {
   width: 100vw;
@@ -48,31 +69,31 @@ a{
   align-items: center;
 }
 .start_slider {
-    animation: slide 0.5s forwards linear;
-    animation-delay: 1.8s;
-    position: relative;
-    bottom: 10vh;
-    font-weight: 500;
-    font-family: monospace;
-    font-size: 120%;
+  animation: slide 0.5s forwards linear;
+  animation-delay: 1.8s;
+  position: relative;
+  bottom: 10vh;
+  font-weight: 500;
+  font-family: monospace;
+  font-size: 120%;
 }
 .start_slider:hover {
   text-shadow: 3px 0px #232323;
 }
 @keyframes slide {
-    from{
-      bottom: 10vh;
-    }
-    to{
-      bottom: 0;
-    }
+  from{
+    bottom: 10vh;
+  }
+  to{
+    bottom: 0;
+  }
 }
 .ready_go {
   height: 10vh;
   overflow: hidden;
 }
 .logo-styles {
-  width: 50%;
+  width: 45%;
   height: 70vh;
 }
 .start_p {
@@ -94,17 +115,17 @@ a{
   height: 70vh;
 }
 .logo-wrapper{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 80vw;
-    padding-bottom: 1%;
-    border-bottom: 1.8px solid #232323;
-    margin-bottom: 1vh;
-    font-family: 'Anonymous Pro';
-    font-size: 2vw;
-    font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  padding-bottom: 1%;
+  border-bottom: 1.8px solid #232323;
+  margin-bottom: 1vh;
+  font-family: 'Anonymous Pro';
+  font-size: 2vw;
+  font-weight: 700;
 }
 .redberry_label {
   height: 2.5vh;
@@ -232,8 +253,7 @@ textarea {
     top: 30vh;
     width: 7vw;
     height: 3vh;
-  }
-  100% {
+  }100% {
     left: 46vw;
     top: 16vh;
     width: 27vw;
@@ -246,11 +266,44 @@ textarea {
     top: 30vh;
     width: 5vw;
     height: 5vw;
-  }
-  100%{
-    left: 53vw;
+  }100%{
+    left: 55vw;
     top: 35vh;
     width: 10vw;
     height: 10vw;
+  }
+}
+.star {
+  width: 15vw;
+  height: 18vw;
+  position: relative;
+  left: 15vw;
+  top: 15vh;
+  animation: vaccine .3s linear forwards;
+}
+@keyframes vaccine{
+  0%{
+    left: 10vw;
+    top: 15vh;
+  }100%{
+    left: 16vw;
+    top: -3vh;
+  }
+}
+.heart {
+  width: 9vw;
+  height: 9vw;
+  position: relative;
+  left: 15vw;
+  top: 6vh;
+  animation: office .3s linear forwards;
+}
+@keyframes office {
+  0%{
+    left: 15vw;
+    top: -1vh;
+  }100%{
+    left: 18vw;
+    top: 6vh;
   }
 }

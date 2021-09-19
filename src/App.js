@@ -10,13 +10,14 @@ import { Target } from './components/target';
 import { Covid } from './components/covid';
 import { Vacc } from './components/vacc';
 import { Comments } from './components/comments';
+import { End } from './components/end';
 import { useState } from 'react';
 
 const App = () => {
   const default_state = {
-    სახელი: "name",
-    გვარი: "surname",
-    მეილი: "mail@redberry.ge"
+    სახელი: "",
+    გვარი: "",
+    მეილი: ""
    }
    const covid_default = {
     გადატანილი: '',
@@ -53,6 +54,7 @@ const App = () => {
     {page === 2 && <MAIN_FRAME component={<Covid covidState={covidState} setCovidState={setCovidState}/>} img={assets[page]}/>}
     {page === 3 && <MAIN_FRAME component={<Vacc vaccState={vaccState} setVaccState={setVaccState}/>} img={assets[page]}/>}
     {page === 4 && <MAIN_FRAME component={<Comments comments={comments} setComments={setComments} submit_function={submit_function} />} img={assets[page]}/>}
+    {page === 5 && <End />}
     </form>
   )
 }
